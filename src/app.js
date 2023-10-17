@@ -8,14 +8,17 @@ import connectMongo from 'connect-mongo';
 import passport from './config/passport-config.js';
 import initializePassport from './config/passport-config.js';
 import { errorHandler, notFoundHandler } from './middleware/errorHandler.js';
-import { ProductManager } from './src/ProductManager.js';
+import { ProductManager } from './ProductManager.js';
 import { Server} from 'socket.io';
+
+import ProductRepository from './repositories/productRepository.js';
+import TicketService from './services/ticketService.js';
 
 
 // Rutas
-import cartRoutes from './src/routes/cartRoutes.js';
-import productRoutes from './src/routes/productRoutes.js';
-import userRoutes from './src/routes/userRoutes.js';
+import cartRoutes from './routes/cartRoutes.js';
+import productRoutes from './routes/productRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 
 const app = express();
 const server = http.createServer(app);
