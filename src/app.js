@@ -69,6 +69,13 @@ mongoose.connect('mongodb://127.0.0.1:27017/charra', {
   app.use('/products', productRoutes);
   app.use('/users', userRoutes); // Usar las rutas de usuarios
 
+  // Rutas de autenticación
+  app.use('/auth', authRoutes);
+
+  // Rutas para el módulo de mocking
+  app.use('/mocking', mockingController);
+  
+
   // Servir archivos estáticos desde la carpeta "public"
   app.use(express.static(path.join(__dirname, 'public')));
 
